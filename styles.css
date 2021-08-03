@@ -1,0 +1,56 @@
+body {
+    background: url("https://happywall-img-gallery.imgix.net/8224/watercolor_world_map_pastel_display.jpg") no-repeat fixed center;
+    background-size: 100% 100%;
+    font-family: 'Roboto', sans-serif;
+}
+h1 {
+    text-align: center;
+}
+.flex-grid {
+    width: 100%;
+    height: 80vh;
+    margin: 0 0 10px 0;
+    justify-content: space-between;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    perspective: 1000px;
+    justify-items: center;
+}
+.card {
+    width: 200px;
+    height: 200px;
+    transition: all .25s linear;
+    transform-style: preserve-3d;
+}
+.filter {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+.front, .back {
+    width: 200px;
+    height: 200px;
+    color: white;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.front {
+    z-index: 2;
+    backface-visibility: hidden;
+    background-color: rgba(0, 0, 0, .2);
+}
+.back {
+    z-index: 1;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    background-color: rgba(0, 0, 0, .2);
+}
+.card:hover{
+    transform: rotateY(180deg);
+}
